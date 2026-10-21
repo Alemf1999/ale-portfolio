@@ -378,13 +378,11 @@
     var tries = 0;
     (function place() {
       if (mount()) {
-        if (!state.seen && !allDone()) openPop();
         return;
       }
       if (++tries < 15) { setTimeout(place, 150); return; }
       wrap.classList.add("am-fixed");        // plan B: arriba a la derecha
       document.body.appendChild(wrap);
-      if (!state.seen && !allDone()) openPop();
     })();
 
     /* si cambias el idioma de la web (html lang), se traduce solo */
