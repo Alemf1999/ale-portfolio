@@ -1,0 +1,1 @@
+Coloca aquí sonidos opcionales (clicks, música de fondo) si decides añadir esa funcionalidad.

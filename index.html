@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ale Marín ⟡ portafolio</title>
+  <link rel="icon" href="assets/images/logo.gif" type="image/gif">
+  <!-- Estilos generales (header, footer, modal) -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Estilos de esta portada -->
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- Lluvia pixel art de fondo -->
+  <canvas id="rain-canvas" aria-hidden="true"></canvas>
+
+  <!-- El contenido del header vive en js/partials.js -->
+  <header class="site-header" id="site-header-root"></header>
+
+  <main class="home">
+
+    <!-- ═════════ VENTANA 1: ALBUM ═════════ -->
+    <section class="window window-album">
+      <div class="window-bar">
+        <span class="window-title">portfolio.pdf</span>
+        <span class="window-controls">
+          <button type="button" aria-label="minimizar">-</button>
+          <button type="button" aria-label="cerrar">x</button>
+        </span>
+      </div>
+
+      <div class="window-body">
+        <!-- TU IMAGEN: cambia el src por la tuya -->
+        <div class="album-photo">
+          <img src="assets/images/fondo.gif" alt="Foto de presentación">
+        </div>
+
+        <!-- TU TEXTO -->
+        <div class="album-text">
+          <p>Mi portfolio ୨୧ ˖ Holaa soy <strong>Ale</strong></p>
+          <p>España · 27 · Ilustradora ♡</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═════════ VENTANA 2: CHAT ═════════ -->
+    <section class="window window-chat">
+      <div class="window-bar">
+        <span class="window-title">email.jpg</span>
+        <span class="window-controls">
+          <button type="button" aria-label="minimizar">-</button>
+          <button type="button" aria-label="cerrar">x</button>
+        </span>
+      </div>
+
+      <div class="window-body chat">
+
+        <!-- Mensaje 1 (izquierda) -->
+        <div class="chat-row chat-left">
+          <img class="avatar" src="assets/images/profile pic.gif" alt="">
+          <div class="chat-content">
+            <span class="chat-name">➤ Alee dice:</span>
+            <div class="bubble bubble-pink">
+              no sé ni <em>quién soy</em> ni lo que hago, cómo sé si voy bien?
+            </div>
+          </div>
+        </div>
+
+        <!-- Mensaje 2 (derecha) -->
+        <div class="chat-row chat-right">
+          <div class="chat-content">
+            <span class="chat-name">˚.⋆꒰১ ໒꒱⋆.˚ dice: ➤</span>
+            <div class="bubble bubble-blue">
+              solo asegurate de que las piezas del puzzle formen una imagen que te guste.
+            </div>
+          </div>
+          <img class="avatar" src="assets/images/nyan cat.gif" alt="">
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- El contenido del footer vive en js/partials.js -->
+  <footer class="site-footer" id="site-footer-root"></footer>
+
+  <!-- El contenido del modal de contacto vive en js/partials.js -->
+  <div id="contact-modal" class="modal" aria-hidden="true">
+    <div id="contact-modal-root"></div>
+  </div>
+  <script src="js/missions.js"></script>
+  <script src="js/partials.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/rain.js"></script>
+</body>
+</html>

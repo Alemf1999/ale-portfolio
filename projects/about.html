@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí ⟡ Alejandra Marín</title>
+  <link rel="icon" href="../assets/images/logo.gif" type="image/gif">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Estilos generales (header, footer, modal) -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- Ventanitas retro + fondo de lluvia (los mismos de la portada) -->
+  <link rel="stylesheet" href="../css/home.css">
+  <!-- Estilos propios de esta página -->
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+
+  <canvas id="rain-canvas" aria-hidden="true"></canvas>
+
+  <!-- El contenido del header vive en js/partials.js -->
+  <header class="site-header" id="site-header-root"></header>
+
+  <main class="home about-page">
+    <h1 class="sr-only">Sobre mí</h1>
+
+    <div class="about-grid">
+
+      <!-- ═════════ COLUMNA IZQUIERDA: FOTO + DATOS ═════════ -->
+      <div class="about-col">
+
+        <section class="window">
+          <div class="window-bar">
+            <span class="window-title">yo.jpg</span>
+            <span class="window-controls">
+              <button type="button" aria-label="minimizar">-</button>
+              <button type="button" aria-label="cerrar">x</button>
+            </span>
+          </div>
+
+          <div class="window-body">
+            <!-- TU FOTO: reemplaza por la tuya en assets/images/ -->
+            <div class="portrait">
+              <img src="../assets/images/yo.jpg" alt="Retrato de Alejandra Marín">
+            </div>
+
+            <!-- CAJITA DE DATOS -->
+            <div class="facts">
+              <p class="fact">
+                <span class="fact-icon">🇪🇸</span>
+                <span>nacionalidad: española</span>
+              </p>
+              <p class="fact">
+                <span class="fact-icon">☕</span>
+                <span>adicta al café <small>(oficialmente)</small></span>
+              </p>
+              <p class="fact">
+                <span class="fact-icon">🌧️</span>
+                <span>dibuja mejor con lluvia de fondo</span>
+              </p>
+              <p class="fact">
+                <span class="fact-icon">🎨</span>
+                <span>siempre con una mancha de pintura</span>
+              </p>
+
+              <!-- Barra de cafeína -->
+              <div class="meter" aria-label="Nivel de cafeína al 80%">
+                <span class="meter-label">cafeína</span>
+                <span class="meter-bar">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i>
+                </span>
+                <span class="meter-value">80%</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+
+      <!-- ═════════ COLUMNA DERECHA: TEXTO + SOFTWARES ═════════ -->
+      <div class="about-col">
+
+        <section class="window">
+          <div class="window-bar">
+            <span class="window-title">sobre-mi.txt</span>
+            <span class="window-controls">
+              <button type="button" aria-label="minimizar">-</button>
+              <button type="button" aria-label="cerrar">x</button>
+            </span>
+          </div>
+
+          <div class="window-body about-text">
+            <p>
+              Soy <strong>Alejandra Marín</strong> (1999), una ilustradora española que
+              actualmente vive en Cartagena (Murcia). Trabajo con distintas disciplinas,
+              aunque la <strong>ilustración</strong> suele ser mi medio principal.
+            </p>
+
+            <p>
+              Me gusta trabajar con historias y crear
+              <strong>estéticas femeninas y fantásticas</strong>. Creo que la estética
+              cambia por completo la forma en la que experimentamos algo, por eso me gusta
+              llevar mi arte un poco más allá, explorando su funcionalidad a través de
+              aplicaciones, juegos, proyectos y universos visuales enteros.
+            </p>
+
+            <p>
+              Me considero <strong>autodidacta</strong> y mi principal motor es seguir
+              explorando y expandiendo mi forma de crear. Me gusta aprender cosas nuevas y
+              experimentar con diferentes medios, porque creo que cuantas más experiencias
+              recoja, más podré ampliar mi forma de ver y crear.
+            </p>
+          </div>
+        </section>
+
+
+        <section class="window">
+          <div class="window-bar">
+            <span class="window-title">softwares.exe</span>
+            <span class="window-controls">
+              <button type="button" aria-label="minimizar">-</button>
+              <button type="button" aria-label="cerrar">x</button>
+            </span>
+          </div>
+
+          <div class="window-body">
+            <ul class="skills-list">
+              <li>Procreate</li>
+              <li>Photoshop</li>
+              <li>Wordpress</li>
+              <li>Blender</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- El contenido del footer vive en js/partials.js -->
+  <footer class="site-footer" id="site-footer-root"></footer>
+
+  <!-- El contenido del modal de contacto vive en js/partials.js -->
+  <div id="contact-modal" class="modal" aria-hidden="true">
+    <div id="contact-modal-root"></div>
+  </div>
+
+  <script src="../js/missions.js"></script>
+  <script src="../js/partials.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/rain.js"></script>
+</body>
+</html>

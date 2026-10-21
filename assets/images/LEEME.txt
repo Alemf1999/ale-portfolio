@@ -1,0 +1,1 @@
+Coloca aquí tus imágenes (retrato, miniaturas de proyectos, poster del vídeo, etc). Nombres esperados por el HTML de ejemplo: hero-poster.jpg, portrait-placeholder.jpg, project-1-thumb.jpg, project-2-thumb.jpg, project-3-thumb.jpg, project-1-full-1.jpg, project-1-full-2.jpg

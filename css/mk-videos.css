@@ -1,0 +1,101 @@
+/* ==========================================================
+   VÍDEOS DESTACADOS · polaroids con cinta, carrusel horizontal
+   Pégalo al final de css/mediakit.css (no cambia tu HTML).
+   Ajusta el tamaño con --video-w y --video-h.
+   ========================================================== */
+
+.mk-videos {
+  --video-w: 300px;     /* ancho de cada polaroid */
+  --video-h: 540px;     /* alto del vídeo; sube o baja si se corta el pie */
+
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  padding: 28px 20px 34px;      /* aire para la cinta, la sombra y la inclinación */
+  margin-inline: -20px;         /* el carrusel respira un poco fuera de la columna */
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #b98aa0 transparent;
+}
+.mk-videos::after { content: ""; flex: 0 0 1px; }   /* margen final del scroll */
+
+.mk-videos::-webkit-scrollbar { height: 8px; }
+.mk-videos::-webkit-scrollbar-thumb { background: #b98aa0; border-radius: 0; }
+.mk-videos::-webkit-scrollbar-track { background: var(--bubble-pink); }
+
+/* ---------- Polaroid ---------- */
+.mk-video {
+  position: relative;
+  flex: 0 0 min(var(--video-w), 78vw);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 10px 14px;
+  background: var(--window-bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 var(--shadow);
+  transform: rotate(var(--tilt, -1.5deg));
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.mk-video:nth-child(2n) { --tilt: 1.5deg; }
+.mk-video:nth-child(3n) { --tilt: -0.8deg; }
+.mk-video:nth-child(4n) { --tilt: 2deg; }
+
+.mk-video:hover,
+.mk-video:focus-within {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 6px 9px 0 var(--shadow);
+}
+
+/* Cinta washi a rayas de pixel */
+.mk-video::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 78px;
+  height: 24px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(215, 170, 195, .8) 0 6px,
+    rgba(240, 228, 232, .8) 6px 12px
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+.mk-video:nth-child(2n)::before { transform: translateX(-50%) rotate(3deg); }
+
+/* ---------- Vídeo ---------- */
+.mk-video iframe {
+  display: block;
+  width: 100%;
+  height: var(--video-h);
+  border: 0;
+  border-radius: 8px;
+  background: var(--bubble-pink);   /* se ve mientras carga */
+}
+
+/* ---------- Enlace (el pie de la polaroid) ---------- */
+.mk-video a {
+  align-self: center;
+  font-family: var(--font-main);
+  font-size: 12px;
+  color: var(--text);
+  text-decoration: none;
+  text-transform: lowercase;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #b98aa0;
+}
+.mk-video a::before { content: "✧ "; color: #b98aa0; }
+.mk-video a::after  { content: " ↗"; }
+.mk-video a:hover   { color: #b98aa0; }
+.mk-video a:focus-visible { outline: 2px solid var(--text); outline-offset: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-video { transition: none; }
+}

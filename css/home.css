@@ -1,0 +1,201 @@
+/* ==========================================================
+   HOME · ventanitas retro
+   Guárdalo como css/home.css
+   Todo lo personalizable está en las variables de :root
+   ========================================================== */
+
+:root {
+  /* — COLORES — */
+  --page-bg:        #ffffff;
+  --window-bg:      #ffffff;
+  --bar-bg:         #f0e4e8;   /* barra de título y cajas rosas */
+  --border:         #cdbcc3;   /* borde de las ventanas */
+  --shadow:         #e3d3d9;   /* sombra desplazada */
+  --text:           #5a4a50;
+  --text-soft:      #8a7a80;
+  --bubble-pink:    #f0e4e8;
+  --bubble-blue:    #e4e8f2;
+  --bubble-blue-tx: #4a4f7a;
+
+  /* — TIPOGRAFÍA — */
+  --font-main: "Rainy Hearts", sans-serif;
+
+  /* — FORMAS — */
+  --radius-window: 14px;
+  --radius-box:    10px;
+  --shadow-offset: 4px;
+  --window-width:  360px;
+}
+
+/* ---------- Layout general ---------- */
+.home {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 5px 16px 64px;
+  background: transparent;   /* para que se vea la lluvia detrás */
+  font-family: var(--font-main);
+  color: var(--text);
+}
+
+/* ---------- Ventana base ---------- */
+.window {
+  width: 100%;
+  max-width: var(--window-width);
+  background: var(--window-bg);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-window);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--shadow);
+  overflow: hidden;
+}
+
+/* Reparto en zigzag como en la referencia (solo en pantallas anchas) */
+@media (min-width: 640px) {
+  .window-album { align-self: center; transform: translateX(-40px); }
+  .window-chat  { align-self: center; transform: translateX(40px); }
+}
+
+.window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bar-bg);
+  border-bottom: 2px solid var(--border);
+  font-size: 20px;
+  letter-spacing: 0.02em;
+}
+
+.window-controls { display: flex; gap: 14px; }
+.window-controls button {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: var(--text-soft);
+  cursor: pointer;
+  line-height: 1;
+}
+.window-controls button:hover { color: var(--text); }
+
+.window-body { padding: 8px; }
+
+/* ---------- Ventana 1: album ---------- */
+.album-photo {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-box);
+  overflow: hidden;
+  background: var(--bar-bg);
+  aspect-ratio: 16 / 9;          /* cambia a 1 / 1 o 4 / 5 si quieres */
+}
+.album-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.album-text {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-box);
+  background: var(--window-bg);
+  text-align: center;
+  font-size: 19px;
+  line-height: 1.4;
+}
+.album-text p { margin: 0; }
+.album-text strong { font-weight: 700; color: var(--text); }
+
+/* ---------- Ventana 2: chat ---------- */
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 14px;
+}
+
+.chat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.chat-right { justify-content: flex-end; }
+
+.avatar {
+  flex: 0 0 auto;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  background: var(--bar-bg);
+}
+
+.chat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.chat-right .chat-content { align-items: flex-end; }
+
+.chat-name {
+  font-size: 19px;
+  color: var(--text-soft);
+}
+
+.bubble {
+  padding: 8px 12px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-box);
+  font-size: 19px;
+  line-height: 1.5;
+}
+.bubble-pink { background: var(--bubble-pink); }
+.bubble-blue {
+  background: var(--bubble-blue);
+  text-align: right;
+}
+.bubble-blue .hl { color: var(--bubble-blue-tx); }
+
+/* ---------- Botones de secciones ---------- */
+.pill-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 10px 26px;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: var(--window-bg);
+  box-shadow: 3px 3px 0 var(--shadow);
+  color: var(--text);
+  font-family: var(--font-main);
+  font-size: 20px;
+  text-decoration: none;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.pill:hover {
+  background: var(--bar-bg);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+.pill:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--shadow);
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 420px) {
+  .avatar { width: 48px; height: 48px; }
+  .pill   { padding: 9px 20px; }
+}

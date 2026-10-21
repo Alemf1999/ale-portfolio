@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos ⟡ Ale Marín</title>
+  <link rel="icon" href="assets/images/logo.gif" type="image/gif">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-mission="projects">
+
+  <canvas id="rain-canvas" aria-hidden="true"></canvas>
+
+  <!-- El contenido del header vive en js/partials.js -->
+  <header class="site-header" id="site-header-root"></header>
+
+  <main class="page works-page">
+    <h1 class="page-title">Proyectos</h1>
+
+    <!-- ============================================
+         FILTROS
+         Para añadir una categoría nueva:
+         1. Añade un botón aquí con un data-filter nuevo (sin acentos ni espacios)
+         2. Usa ese mismo valor en el data-category de las tarjetas de abajo
+         ============================================ -->
+    <div class="filter-bar" role="tablist" aria-label="Filtrar proyectos por categoría">
+      <button class="filter-btn active" data-filter="todos">todos</button>
+      <button class="filter-btn" data-filter="Ilustración">Ilustración/animación</button>
+      <button class="filter-btn" data-filter="Editorial">Editorial</button>
+      <button class="filter-btn" data-filter="Web/Apps">Web/Apps</button>
+      <button class="filter-btn" data-filter="Proyectos personales">Proyectos personales</button>
+      <button class="filter-btn" data-filter="Enseñanza">Enseñanza</button>
+    </div>
+
+    <!-- ============================================
+         REJILLA DE PROYECTOS
+         Para añadir un proyecto nuevo:
+         1. Copia una tarjeta <button class="work-card">...</button>
+         2. Cambia data-project por un id único (sin espacios)
+         3. Cambia data-category por una de las categorías de arriba
+         4. Cambia la imagen (assets/images/proj-X-thumb.jpg) y el texto
+        5. El título y la técnica/año que aparecen aquí se reutilizan
+          automáticamente en el detalle al pulsar la tarjeta.
+        6. Añade la descripción y las fotos en js/script.js, usando el
+          mismo id que pusiste en data-project.
+         Si la imagen no existe todavía, se muestra un color de fondo
+         en su lugar, así que puedes montar la web antes de tener las fotos.
+         ============================================ -->
+    <div class="works-grid">
+
+      <button class="work-card" data-project="Consorte II" data-category="Editorial">
+        <span class="work-thumb" style="background:#dfe7ea;">
+          <img src="assets/images/Caratulas/consorte 1.png" alt="Consorte II" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Consorte II</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="sirenas" data-category="Ilustración">
+        <span class="work-thumb" style="background:#dfe7ea;">
+          <img src="assets/images/Caratulas/Sirenas.gif" alt="sirenas" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Sirenas</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="astral" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/astral.jpg" alt="astral" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Astral</h2>
+          <p>Procreate ✩ 2024</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="bruja" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/bruja 1.gif" alt="bruja" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Bruja</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+
+       <button class="work-card" data-project="111" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/111.gif" alt="111" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>111</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="calendario-de-adviento" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/calendario adviento.gif" alt="calendario de adviento" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Calendario de Adviento</h2>
+          <p>Wordpress ✩ 2024</p>
+        </span>
+      </button>
+
+      
+      <button class="work-card" data-project="amor-implacable" data-category="Editorial">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/Amor_implacable.jpg" alt="amor implacable" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Amor Implacable</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+      
+       <button class="work-card" data-project="calendario-de-adviento-2-0" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/adviento2.gif" alt="calendario de adviento 2.0" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Calendario de Adviento 2.0</h2>
+          <p>Wordpress ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="No me pidas clemencia" data-category="Editorial">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/clemencia 3.png" alt="No me pidas clemencia" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>No me pidas clemencia</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="pichi-pichi-pitch" data-category="Ilustración">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/Pichi pichi pitch.gif" alt="Pichi pichi pitch" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Pichi pichi pitch</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="hipotesis-del-amor" data-category="Ilustración">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/Hipotesis.gif" alt="Hipótesis" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Hipótesis del amor</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="tienda" data-category="Proyectos personales">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/tienda.png" alt="Mi tienda" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Tienda</h2>
+          <p>Shopify ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="capitulo-0" data-category="Ilustración">
+        <span class="work-thumb" style="background:#e4dcf4;">
+          <img src="assets/images/Caratulas/cap.0.gif" alt="Capítulo 0" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Capítulo 0</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="bebotario" data-category="Proyectos personales">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/bebotario.jpg" alt="Bebotario" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Bebotario</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="pegatinas" data-category="Proyectos personales">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/pegatinas.webp" alt="Pegatinas" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Pegatinas</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      
+      <button class="work-card" data-project="consorte" data-category="Editorial">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/Consorte.jpg" alt="Consorte" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Consorte</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="corona-helada" data-category="Editorial">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/Corona_Helada.jpg" alt="Corona Helada" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Corona Helada</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+          <button class="work-card" data-project="hada negra" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/hada 1.gif" alt="Hada Negra" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Hada Negra</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="neocities" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/Neocities.png" alt="Neocities" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Neocities</h2>
+          <p>Obra ✩ 2025</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="pinturas" data-category="Proyectos personales">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/Pinturas.jpg" alt="Pinturas" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Pinturas</h2>
+          <p>Obra ✩ 2025</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="flotando-en-cartas-de-amor" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f6e7d0;">
+          <img src="assets/images/Caratulas/cartas de amor.jpg" alt="Cartas de Amor" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Flotando en cartas de Amor</h2>
+          <p>Procreate ✩ 2023</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="calendario-de-creadoras" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/calendario_creadoras.gif" alt="Calendario de Creadoras" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Calendario de Creadoras</h2>
+          <p>Wordpress ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="glow" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/glow.png" alt="Glow" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Glow</h2>
+          <p>Procreate ✩ 2024</p>
+        </span>
+      </button>
+
+        <button class="work-card" data-project="sims" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/sims 1.gif" alt="sims" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Sims</h2>
+          <p>Procreate ✩ 2024</p>
+        </span>
+      </button>
+
+    <button class="work-card" data-project="la-ciudad-del-cenit" data-category="Editorial">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/La ciudad del cenit.jpg" alt="La ciudad del cenit" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>La ciudad del cenit</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="manga-nimbus" data-category="Proyectos personales">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/nimbus.png" alt="Manga Nimbus" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Manga Nimbus</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="carpetamagica" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/carpetamágica.gif" alt="Carpetamágica" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Carpetamágica</h2>
+          <p>Wordpress ✩ 2025</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="la-teoria-del-todo-o-nada" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/la teoría del todo.jpg" alt="La teoría del todo" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>La teoría del todo o nada</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="corona-en-llamas" data-category="Editorial">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/Corona en llamas.png" alt="Corona en llamas" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Corona en llamas</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="squid-games" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/Squidgames.jpg" alt="Squid Games" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Squid Games</h2>
+          <p>Procreate ✩ 2023</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="carta-blanca" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/carta blanca.jpg" alt="Carta blanca" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Carta blanca</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="tfg" data-category="Proyectos personales">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/tfg.png" alt="Nimbus" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>TFG</h2>
+          <p>Procreate ✩ Web3 ✩ 2025</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="Paint" data-category="Ilustración">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/paint 2.png" alt="Paint" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Paint</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="tienda-notion" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/tiendanotion.gif" alt="Tienda Notion" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Tienda Notion</h2>
+          <p>Notion ✩ 2026</p>
+        </span>
+      </button>
+
+          <button class="work-card" data-project="wonderpals" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/wonderpals 3.png" alt="Wonderpals" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Wonderpals</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="san-valentin-2-0" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/valentin2.gif" alt="San Valentin 2.0" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>San Valentin 2.0</h2>
+          <p>Figma ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="fyq" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/chatgpt.gif" alt="ChatGPT" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>FyQ</h2>
+          <p>Wordpress ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="wishlist" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/wishlist.gif" alt="Wishlist" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Wishlist</h2>
+          <p>VS Studio ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="el-viejo-y-el-mar" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/viejoyelmar.jpg" alt="Viejo Y El Mar" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>El Viejo Y El Mar</h2>
+          <p>Animación ✩ Procreate ✩ 2024</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="tamagochi-app" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/tamagochi.gif" alt="Tamagochi" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Tamagochi app</h2>
+          <p>VS Studio ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="ojos" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/ojos 1.gif" alt="Ojos" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Ojos</h2>
+          <p>Procreate ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="web-alemf-com" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/web.gif" alt="Web" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Web alemf.com</h2>
+          <p>Wordpress ✩ 2025</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="mail-club" data-category="Proyectos personales">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/Mail.jpg" alt="Mail club" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Mail club</h2>
+          <p>Procreate ✩ 2025-2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="tabla-de-surf-tasty-poke" data-category="Ilustración">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/surf.jpg" alt="Surf" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Tabla de Surf Tasty poke</h2>
+          <p>Pintura ✩ 2025</p>
+        </span>
+      </button>
+
+
+       <button class="work-card" data-project="tiempo" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/Tiempo.jpg" alt="Tiempo" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Tiempo</h2>
+          <p>Procreate ✩ 2024</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="estaciones" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/estaciones.jpg" alt="Estaciones" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Estaciones</h2>
+          <p>Animación ✩ Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="sobres-san-valentin" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/sobres.gif" alt="Sobres" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Sobres San Valentin</h2>
+          <p>Wordpress ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="horario-app" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/horario.gif" alt="Horario" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Horario app</h2>
+          <p>VS Studio ✩ 2026</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="mathilda" data-category="Ilustración">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/mathilda.jpg" alt="Mathilda" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Mathilda</h2>
+          <p>Photoshop CS5 ✩ 2018</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="postales" data-category="Ilustración">
+        <span class="work-thumb" style="background:#eef1c7;">
+          <img src="assets/images/Caratulas/postales.png" alt="Postales" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Postales</h2>
+          <p>Procreate ✩ 2023</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="ilustraciones-old-portfolio" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/ilustraciones.gif" alt="Ilustraciones" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Ilustraciones old-portfolio </h2>
+          <p>Procreate ✩ 2024</p>
+        </span>
+      </button>
+
+
+       <button class="work-card" data-project="cyberpunk" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/Cyberpunk.PNG" alt="Cyberpunk" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Cyberpunk</h2>
+          <p>Procreate ✩ 2023</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="san-valentin" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/sanvalentin.gif" alt="San Valentín" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>San Valentín</h2>
+          <p>Figma ✩ 2024</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="clases" data-category="Enseñanza">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/proyectos/clases/clases 4.jpg" alt="Clases" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Clases</h2>
+          <p>Presencial ✩ 2025</p>
+        </span>
+      </button>
+
+
+       <button class="work-card" data-project="justicia" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/justicia.jpg" alt="Justicia" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Justicia</h2>
+          <p>Photoshop CS5 ✩ 2018</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="carteles" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/proyectos/carteles/carteles 2.JPG" alt="posters" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Diseño posters</h2>
+          <p>Procreate ✩ 2024</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="old-portfolio" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/Portfolio.gif" alt="Portfolio" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Old-Portfolio</h2>
+          <p>Wordpress ✩ 2024</p>
+        </span>
+      </button>
+
+
+       <button class="work-card" data-project="my-melody" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/mymelody.png" alt="My Melody" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>My Melody</h2>
+          <p>Procreate ✩ 2024</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="limpiadorcito" data-category="Web/Apps">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/limpiadorcito.webp" alt="Limpiadorcito" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Limpiadorcito</h2>
+          <p>VS studio ✩ 2026</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="pixel-art-planetas" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/pixel.gif" alt="Pixel" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Pixel art planetas</h2>
+          <p>Procreate ✩ 2025</p>
+        </span>
+      </button>
+      
+      <button class="work-card" data-project="museo" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/Museo.JPG" alt="Museo" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Museo</h2>
+          <p>Photoshop CS5 ✩ 2019</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="gris" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/Gris.JPG" alt="Gris" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Gris</h2>
+          <p>Photoshop CS5 ✩ 2018</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="animacion-musical" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/musical.jpg" alt="Musical" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Animación Musical</h2>
+          <p>Animación ✩ Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+      <button class="work-card" data-project="cafe" data-category="Ilustración">
+        <span class="work-thumb" style="background:#d9ece6;">
+          <img src="assets/images/Caratulas/Café.JPG" alt="Café" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Café</h2>
+          <p>Photoshop CS5 ✩ 2019</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="magia-de-lo-cotidiano" data-category="Ilustración">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/magia.jpg" alt="Magia" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Magia de lo cotidiano</h2>
+          <p>Animación ✩ Procreate ✩ 2025</p>
+        </span>
+      </button>
+
+       <button class="work-card" data-project="patreon" data-category="Enseñanza">
+        <span class="work-thumb" style="background:#f4d9e4;">
+          <img src="assets/images/Caratulas/Patreon.png" alt="Patreon" onerror="this.remove()">
+        </span>
+        <span class="work-card-info">
+          <h2>Patreon</h2>
+          <p>Patreon ✩ 2024</p>
+        </span>
+      </button>
+
+
+    </div>
+  </main>
+
+  <!-- El contenido del footer vive en js/partials.js -->
+  <footer class="site-footer" id="site-footer-root"></footer>
+
+  <!-- ============================================
+       MODAL DE PROYECTO (dos columnas: texto + fotos)
+       Este contenedor se rellena por JS según el
+       proyecto en el que se haga clic. No hace falta
+       tocarlo: los textos y fotos se editan en js/script.js
+       ============================================ -->
+  <div id="project-modal" class="modal project-modal" aria-hidden="true">
+    <div class="project-modal-content">
+      <button id="close-project" class="modal-close" aria-label="Cerrar">×</button>
+
+      <div class="project-modal-text">
+        <h2 id="project-title" class="project-modal-title"></h2>
+        <p id="project-year" class="project-modal-year"></p>
+        <div class="project-modal-meta">
+          <p id="project-role" class="project-modal-role"></p>
+          <a id="project-reel" class="project-reel" href="#" target="_blank" rel="noopener noreferrer" hidden>Reel</a>
+        </div>
+        <p id="project-description" class="project-modal-description"></p>
+      </div>
+
+      <div id="project-gallery" class="project-modal-gallery"></div>
+    </div>
+  </div>
+
+  <!-- El contenido del modal de contacto vive en js/partials.js -->
+  <div id="contact-modal" class="modal" aria-hidden="true">
+    <div id="contact-modal-root"></div>
+  </div>
+  <script src="js/missions.js"></script>
+  <script src="js/partials.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/rain.js"></script>
+</body>
+</html>
